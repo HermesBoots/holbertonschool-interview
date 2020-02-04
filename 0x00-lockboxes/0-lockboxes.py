@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for lockboxes algorithm"""
 
+
 def canUnlockAll(boxes):
     """Determine whether allKeys for all boxes are accessible."""
     if (
