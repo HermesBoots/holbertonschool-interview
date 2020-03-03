@@ -1,6 +1,10 @@
 #include <stdio.h>
 
 
+/**
+ * print_grid_3x3 - print a 3x3 grid over 3 rows of text
+ * @grid: grid to print
+ */
 void print_grid_3x3(int grid[3][3])
 {
 	int x, y;
@@ -15,6 +19,11 @@ void print_grid_3x3(int grid[3][3])
 }
 
 
+/**
+ * sandpiles_sum - combine two grids of sand piles, collapsing too-big piles
+ * @grid1: one of the grids
+ * @grid2: the other grid
+ */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	unsigned char stable = 1;
@@ -39,13 +48,13 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			{
 				grid1[y][x] -= 4;
 				if (y > 0)
-					grid2[y-1][x]++;
+					grid2[y - 1][x]++;
 				if (x > 0)
-					grid2[y][x-1]++;
+					grid2[y][x - 1]++;
 				if (x < 2)
-					grid2[y][x+1]++;
+					grid2[y][x + 1]++;
 				if (y < 2)
-					grid2[y+1][x]++;
+					grid2[y + 1][x]++;
 			}
 		}
 	sandpiles_sum(grid1, grid2);
