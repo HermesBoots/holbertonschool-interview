@@ -3,7 +3,7 @@
  * @n: integer to check
  * Return: number of digits in n
  */
-extern inline unsigned long count_digits(unsigned long n)
+static inline unsigned long count_digits(unsigned long n)
 {
 	if (n < 10LU)
 		return (1LU);
