@@ -6,7 +6,7 @@ def validUTF8(data):
     """Validate whether a list of ints is valid UTF-8"""
 
     if len(data) < 1:
-        return True
+        return False
     index = 0
     while index < len(data):
         if data[index] < 128:
