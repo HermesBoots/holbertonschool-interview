@@ -15,7 +15,7 @@ def validUTF8(data):
             data[index] & 0xE0 == 0xC0 and
             data[index + 1] & 0xC0 == 0x80
         ):
-            index +=2 
+            index += 2
         elif (
             data[index] & 0xF0 == 0xE0 and
             data[index + 1] & 0xC0 == 0x80 and
