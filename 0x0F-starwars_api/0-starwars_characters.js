@@ -31,6 +31,6 @@ request.get(
       }
     };
 
-    request.get('https://swapi-api.hbtin.io/api/people/', { json: true }, loadPeople);
+    request.get('https://swapi-api.hbtn.io/api/people/', { json: true }, loadPeople);
   }
 );
