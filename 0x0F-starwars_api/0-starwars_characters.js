@@ -2,7 +2,7 @@
 
 const request = require('request');
 request.get(
-  'https://swapi-api.hbtn.io/api/films/' + process.argv[2],
+  'https://swapi-api.hbtn.io/api/films/' + process.argv[2] + '/',
   { json: true },
   function (error, response, body) {
     if (error) { return; }
