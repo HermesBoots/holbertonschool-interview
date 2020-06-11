@@ -27,10 +27,8 @@ def rain(walls):
     right = findPeak(walls, left + 1, True)
     result = 0
     while left > -1 and right > -1:
-        print(walls[left:right + 1])
         result += min(walls[left], walls[right]) * (right - left - 1)
         result -= sum(walls[left + 1:right])
-        print(left, right)
         left = findPeak(walls, right, False)
         right = findPeak(walls, left + 1, True)
     return result
