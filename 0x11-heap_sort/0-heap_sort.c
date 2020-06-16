@@ -1,0 +1,65 @@
+#include <stddef.h>
+#include <stdint.h>
+#include "sort.h"
+
+#define getParent(i) (((i) - 1) / 2)
+#define getLeft(i) (2 * (i) + 1)
+#define getRight(i) (2 * (i) + 2)
+
+
+/**
+ * fix_heap - repair a branch of an array-based heap
+ * @array: array containing heap
+ * @size: total size of array
+ * @root: index of root node of heap
+ * @last: index of last node in heap to examine
+ */
+void fix_heap(int *array, size_t size, size_t root, size_t last)
+{
+	size_t largest, left, right;
+
+	do {
+		left = getLeft(root);
+		right = getRight(root);
+		largest = root;
+		if (right <= last && array[right] > array[root])
+			largest = right;
+		if (array[left] > array[largest])
+			largest = left;
+		if (root == largest)
+			return;
+		array[root] ^= array[largest];
+		array[largest] ^= array[root];
+		array[root] ^= array[largest];
+		print_array(array, size);
+		root = largest;
+	} while (getLeft(root) <= last);
+}
+
+
+/**
+ * heap_sort - use heap sort
+ * @array: array to sort
+ * @size: size of array
+ */
+void heap_sort(int *array, size_t size)
+{
+	size_t node, sorted;
+
+	if (array == NULL || size < 2)
+		return;
+	for (node = getParent(size - 1); node != SIZE_MAX; node--)
+		fix_heap(array, size, node, size - 1);
+	for (sorted = size - 1; sorted > 1; sorted--)
+	{
+		array[0] ^= array[sorted];
+		array[sorted] ^= array[0];
+		array[0] ^= array[sorted];
+		print_array(array, size);
+		fix_heap(array, size, 0, sorted - 1);
+	}
+	array[0] ^= array[1];
+	array[1] ^= array[0];
+	array[0] ^= array[1];
+	print_array(array, size);
+}
