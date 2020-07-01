@@ -1,4 +1,3 @@
-    
 #!/usr/bin/python3
 """Get frequency of keywords in posts in a Subreddit"""
 
