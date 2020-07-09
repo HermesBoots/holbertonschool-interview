@@ -20,9 +20,9 @@ struct binary_tree_s
 typedef struct binary_tree_s binary_tree_t;
 typedef struct binary_tree_s heap_t;
 
-size_t tree_height(heap_t const *tree, size_t height)
-heap_t *last_node(heap_t *tree, size_t depth)
-void swap_nodes(heap_t *parent, heap_t *child)
-int heap_extract(heap_t **root)
+size_t tree_height(heap_t const *tree, size_t height);
+heap_t *last_node(heap_t *tree, size_t depth);
+void swap_nodes(heap_t *parent, heap_t *child);
+int heap_extract(heap_t **root);
 
 #endif
