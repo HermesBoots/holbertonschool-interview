@@ -15,8 +15,8 @@ def rotate_2d_matrix(matrix: list):
         return
     if not all(len(sub) == len(matrix) for sub in matrix):
         return
-    gen = zip(*reversed(matrix))
+    copy = list(list(sub) for sub in zip(*reversed(matrix)))
+    print(copy)
     for y in range(len(matrix)):
-        row = next(gen)
         for x in range(len(matrix[0])):
-            matrix[y][x] = row[x]
+            matrix[y][x] = copy[y][x]
