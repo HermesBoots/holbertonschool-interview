@@ -3,5 +3,6 @@
 
 void print_array(int const *array, size_t size);
 void merge_sort(int *array, size_t size);
+typedef size_t st;
 
 #endif

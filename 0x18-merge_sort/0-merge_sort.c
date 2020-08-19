@@ -1,5 +1,6 @@
-#include "sort.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "sort.h"
 
 /**
  * do_merge_sort - recursive helper function to sort via merge sort
