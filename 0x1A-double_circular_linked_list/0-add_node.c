@@ -25,7 +25,8 @@ List *add_node_end(List **list, char *str)
 		return (NULL);
 	}
 	newNode->str = newStr;
-	if (*list == NULL) {
+	if (*list == NULL)
+	{
 		newNode->next = newNode;
 		newNode->prev = newNode;
 		*list = newNode;
