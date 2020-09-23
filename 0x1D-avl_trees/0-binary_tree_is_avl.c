@@ -1,5 +1,4 @@
 #include <limits.h>
-#include <stdio.h>
 #include "binary_trees.h"
 
 
@@ -20,7 +19,6 @@ int binary_tree_height(binary_tree_t const *tree, int height)
 	right = binary_tree_height(tree->right, height);
 	if (left - right > 1 || left - right < -1)
 		return (-1);
-	printf("%d, %d / %d\n", tree->n, left, right);
 	return (left > right ? left : right);
 }
 
