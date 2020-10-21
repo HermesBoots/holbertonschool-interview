@@ -99,5 +99,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 			s_index = new;
 		}
 	}
+	free(word_status);
+	realloc(ret, sizeof(*ret) * *n);
 	return (ret);
 }
