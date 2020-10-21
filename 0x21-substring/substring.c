@@ -100,6 +100,6 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 		}
 	}
 	free(word_status);
-	realloc(ret, sizeof(*ret) * *n);
+	ret = realloc(ret, sizeof(*ret) * *n);
 	return (ret);
 }
