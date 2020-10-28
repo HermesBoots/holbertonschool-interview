@@ -91,13 +91,9 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 		for (words_index = 0; words_index < nb_words; words_index++)
 			word_status[words_index] = WORD_DEFAULT;
 		new = check_substring_words(s, s_index, word_status, words, nb_words);
-		if (new < 0)
-			s_index++;
-		else
-		{
+		if (new >= 0)
 			ret[(*n)++] = s_index;
-			s_index = new;
-		}
+		s_index++;
 	}
 	free(word_status);
 	ret = realloc(ret, sizeof(*ret) * *n);
