@@ -108,8 +108,6 @@ primes = [
 
 def isWinner(x, nums):
     """Determine if number of primes less than n is odd or even"""
-    if x != len(nums):
-        return None
     rounds = x if x <= len(nums) else len(nums)
     wins = 0
     for round in range(rounds):
@@ -121,6 +119,8 @@ def isWinner(x, nums):
             if primes[index] > n:
                 break
         wins += 1 if index % 2 == 1 else -1
-    if abs(wins) - (len(nums) - x) < 1:
+    if abs(wins) - (x - len(nums)) < 1:
+        return None
+    if wins == 0:
         return None
     return 'Maria' if wins > 0 else 'Ben'
